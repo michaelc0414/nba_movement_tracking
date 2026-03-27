@@ -1,0 +1,7 @@
+for ocr:
+pip install easyocr
+fix conflicting libraries for ocr:
+pip uninstall opencv-python-headless opencv-contrib-python -y
+pip install opencv-contrib-python-headless
+
+*maybe look into different library for better text detection performance*

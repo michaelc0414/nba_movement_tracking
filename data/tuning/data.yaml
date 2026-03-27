@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['players', 'referee']
+
+roboflow:
+  workspace: nbaplayssetsdataset-sparl
+  project: nba-player-detection
+  version: 9
+  license: MIT
+  url: https://universe.roboflow.com/nbaplayssetsdataset-sparl/nba-player-detection/dataset/9
