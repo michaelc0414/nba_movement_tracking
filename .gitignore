@@ -12,3 +12,5 @@ models/
 data/tuning/train/
 data/tuning/dev/
 data/tuning/test/
+data/tuning/data.yaml
+runs/

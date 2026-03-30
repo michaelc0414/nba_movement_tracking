@@ -1,6 +1,6 @@
-train: ../train/images
-val: ../valid/images
-test: ../test/images
+train: C:/Users/Michael/Documents/nba_movement_tracking/data/tuning/train/images
+val: C:/Users/Michael/Documents/nba_movement_tracking/data/tuning/dev/images
+test: C:/Users/Michael/Documents/nba_movement_tracking/data/tuning/test/images
 
 nc: 2
 names: ['players', 'referee']

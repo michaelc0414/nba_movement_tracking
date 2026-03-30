@@ -6,13 +6,13 @@ from pathlib import Path
 import pandas as pd
 import pyarrow as pa
 import pyarrow.parquet as pq
-from src.ocr_utils import extract_scoreboard
+from ocr_utils import extract_scoreboard
 
 clip_path = 'C:/Users/Michael/Documents/nba_movement_tracking/data/clips/test_clip.mp4'
 output_path = 'C:/Users/Michael/Documents/nba_movement_tracking/data/clips/test_clip_transformed.mp4'
 homography_path = "models/homography_frame1.npy"
 
-model = YOLO('models/yolov8x.pt')
+model = YOLO('runs/detect/models/player_detector5/weights/best.pt')
 H = np.load(homography_path)
 
 tracker = BotSort(
@@ -22,7 +22,7 @@ tracker = BotSort(
     track_high_thresh=0.5,
     track_low_thresh=0.1,
     new_track_thresh=0.6,
-    track_buffer=100,
+    track_buffer=60,
     match_thresh=0.8,
 )
 
