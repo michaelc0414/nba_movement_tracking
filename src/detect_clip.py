@@ -3,9 +3,9 @@ from ultralytics import YOLO
 import os
 
 clip_path = 'C:/Users/Michael/Documents/nba_movement_tracking/data/clips/test_clip.mp4'
-output_path = 'C:/Users/Michael/Documents/nba_movement_tracking/data/clips/test_clip_detections.mp4'
+output_path = 'C:/Users/Michael/Documents/nba_movement_tracking/data/clips/test_clip_detectionsNEWNEW.mp4'
 
-model = YOLO("C:/Users/Michael/Documents/nba_movement_tracking/src/models/yolov8x.pt")
+model = YOLO("runs/detect/models/player_detector_polished/weights/best.pt")
 
 cap = cv2.VideoCapture(clip_path)
 total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
@@ -24,7 +24,7 @@ while True:
     if not ret:
         break
 
-    results = model(frame, conf=0.4, verbose=False)[0]
+    results = model(frame, conf=0.45, verbose=False)[0]
 
     
     kept = []

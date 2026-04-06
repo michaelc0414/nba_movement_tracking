@@ -8,7 +8,7 @@ clip_path = 'data/clips/test_clip.mp4'
 output_path = 'data/frames/bad'
 os.makedirs(output_path, exist_ok=True)
 
-model = YOLO('runs/detect/models/player_detector5/weights/best.pt')
+model = YOLO('runs/detect/models/player_detector_polished/weights/best.pt')
 cap = cv2.VideoCapture(clip_path)
 height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 

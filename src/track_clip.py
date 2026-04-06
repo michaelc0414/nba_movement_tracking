@@ -2,17 +2,12 @@ import cv2
 from ultralytics import YOLO
 import supervision as sv
 
-clip_path = 'C:/Users/Michael/Documents/nba_movement_tracking/data/clips/test_clip.mp4'
-output_path = 'C:/Users/Michael/Documents/nba_movement_tracking/data/clips/test_clip_tracked.mp4'
+clip_path = 'data/clips/test_clip.mp4'
+output_path = 'data/clips/test_clip_trackedNEW.mp4'
 
-model = YOLO("C:/Users/Michael/Documents/nba_movement_tracking/src/models/yolov8x.pt")
+model = YOLO("runs/detect/models/player_detector5/weights/best.pt")
 
-tracker = sv.ByteTrack(
-    track_activation_threshold=0.5,
-    lost_track_buffer=60,
-    minimum_matching_threshold=0.85,
-    frame_rate=30
-)
+tracker = sv.ByteTrack()
 
 box_annotator = sv.BoxAnnotator(thickness=2)
 label_annotator = sv.LabelAnnotator(text_scale=0.5, text_thickness=1)
@@ -34,7 +29,7 @@ while True:
     if not ret:
         break
 
-    results = model(frame, conf=0.4, verbose=False)[0]
+    results = model(frame, conf=0.45, verbose=False)[0]
 
     #converting to fit supervision datatype (Detections)
     detections = sv.Detections.from_ultralytics(results)

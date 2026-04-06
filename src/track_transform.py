@@ -123,7 +123,7 @@ df = df[["game_id", "clip_id", "frame", "fps", "track_id",
          "pixel_x", "pixel_y", "court_x", "court_y", "confidence"]]
 
 # save to parquet
-parquet_path = "data/parquet/test_clip_tracking.parquet"
+parquet_path = "data/parquet/test_clip_trackingNEW.parquet"
 df.to_parquet(parquet_path, index=False)
 
 print("Done")

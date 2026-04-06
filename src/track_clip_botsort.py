@@ -5,10 +5,10 @@ import supervision as sv
 from boxmot import BotSort
 from pathlib import Path
 
-clip_path = 'C:/Users/Michael/Documents/nba_movement_tracking/data/clips/test_clip.mp4'
-output_path = 'C:/Users/Michael/Documents/nba_movement_tracking/data/clips/test_clip_tracked.mp4'
+clip_path = 'data/clips/test_clip.mp4'
+output_path = 'data/clips/test_clip_trackedNEW.mp4'
 
-model = YOLO("C:/Users/Michael/Documents/nba_movement_tracking/src/models/yolov8x.pt")
+model = YOLO("runs/detect/models/player_detector5/weights/best.pt")
 
 tracker = BotSort(
     reid_weights=Path("models/osnet_x0_25_msmt17.pt"),
