@@ -1,4 +1,5 @@
-venv/
+.venv/
+.claude/
 __pycache__/
 *.pyc
 data/clips/
@@ -14,3 +15,6 @@ data/tuning/dev/
 data/tuning/test/
 data/tuning/data.yaml
 runs/
+PHASE_2A_RUN.md
+PROJECT_PLAN.md
+project_context_new_chat.md
